@@ -1,3 +1,12 @@
+.reveal-viewport {
+  background: #f0f0f0;
+}
+.reveal blockquote {
+  border-left: 5px #ddd solid;
+  text-align: left;
+  padding-left: 20px;
+  box-shadow: none;
+}
 .reveal blockquote > small {
   line-height: 1;
   vertical-align: baseline;
@@ -10,16 +19,41 @@ figcaption {
 .small {
   font-size: 0.5em;
 }
-.mb-0 {
-  margin-bottom: 0 !important;
+.reveal pre {
+  font-size: 0.5em;
 }
+h1.h2 {
+  font-size: 2.5em;
+}
+.color-transparent {
+  color: transparent;
+}
+p > img {
+  vertical-align: middle;
+}
+code {
+  background-color: #ddd;
+  color: #e83e8c;
+  font-size: 0.9em;
+}
+li > ul {
+  font-size: 0.8em !important;
+}
+
 .d-flex {
   display: flex;
   justify-content: center;
 }
-h1.h2 {
-  font-size: 2.11em;
+.align-items-center {
+  align-items: center;
 }
-.color-transparent {
-  color: transparent;
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mr-2 {
+  margin-right: 2rem !important;
+}
+.mr-3 {
+  margin-right: 3rem !important;
 }

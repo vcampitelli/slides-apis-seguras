@@ -23,24 +23,30 @@
 
                 <section>
                     <h2>Quem sou eu?</h2>
-                    <img src="https://gravatar.com/avatar/375596b28a94ecfaec5d63ff64c7f948">
-                    <ul>
-                        <li>Vinícius Campitelli</li>
-                        <li>Co-fundador do <a href="https://curseduca.com" target="_blank" rel="noopener">Curseduca</a></li>
-                        <li>Membro do <a href="https://phpsp.org.br" target="_blank" rel="noopener">PHPSP</a></li>
-                        <li>GitHub e Twitter são <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></li>
-                        <li>Slides em <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
-                    </ul>
+                    <div class="d-flex align-items-center">
+                        <div class="mr-2">
+                            <img src="img/profile.png" alt="Vinícius Campitelli" alt="Vinícius Campitelli" class="mb-0" style="width: 250px">
+                            <h4>Vinícius Campitelli</h4>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Co-fundador do <a href="https://curseduca.com" target="_blank" rel="noopener">Curseduca</a></li>
+                                <li>Membro do <a href="https://phpsp.org.br" target="_blank" rel="noopener">PHPSP</a></li>
+                                <li>GitHub e Twitter como <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></li>
+                                <li>Slides em <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
 
                 <section>
                     <h2>Agenda</h2>
                     <ul>
-                        <li>Autenticação e autorização</li>
-                        <li>Melhores práticas com access tokens</li>
-                        <li>Throttling e Rate Limiting</li>
-                        <li>Camuflagem de IDs sequenciais</li>
-                        <li>Criptografando e assinando requisições e respostas</li>
+                        <li class="fragment">Autenticação e autorização</li>
+                        <li class="fragment">Melhores práticas com access tokens</li>
+                        <li class="fragment">Throttling e Rate Limiting</li>
+                        <li class="fragment">Camuflagem de IDs sequenciais</li>
+                        <li class="fragment">Criptografando e assinando requisições e respostas</li>
                     </ul>
                 </section>
 
@@ -48,8 +54,8 @@
                     <section>
                         <h1>Autenticação e autorização</h1>
                     </section>
-                    <section>
-                        <h2>O que é Autenticação?</h2>
+                    <section data-auto-animate>
+                        <h2>Autenticação</h2>
                         <div class="fragment">
                             <blockquote cite="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o">
                                 É o ato de estabelecer ou confirmar algo (ou alguém) como autêntico <small>(...)</small>
@@ -57,79 +63,81 @@
                             <small><a href="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
                         </div>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h2>Autenticação</h2>
-                        Para autenticar algo ou alguém, precisamos de uma credencial que identifique esse ser.
-                        Essa credencial precisa ser emitida por algo (ou alguém) que o autorizador confia, seja um terceiro ou ele próprio.
-
-                        Se divide em três categorias.
+                        <div>
+                            Para autenticar algo ou alguém, precisamos de uma credencial que o identifique.<br>
+                            Ela precisa ser emitida por algo (ou alguém) que o autorizador confie.
+                        </div>
                     </section>
                     <section>
                         <h3>&#8220;O que você sabe&#8221;</h3>
-                        – Autenticação baseada no conhecimento
-                        <ul>
-                            <li>Usuário e senha;</li>
-                            <li>Certificado digital;</li>
-                            <li>Client ID e Client Secret.</li>
-                        </ul>
-
-                        <h3>&#8220;O que você tem&#8221;</h3>
-                        – Autenticação baseada na propriedade
-                        <ul>
-                            <li>Um token ou cartão físico;</li>
-                            <li>Um código enviado por SMS ou aplicativo.</li>
-                        </ul>
-
-                        <h3>&#8220;O que você é&#8221;</h3>
-                        – Autenticação baseada na característica, por exemplo: biometria
-                        <ul>
-                            <li>Impressão digital;</li>
-                            <li>Identificação de íris;</li>
-                            <li>Reconhecimento facial;</li>
-                            <li>Reconhecimento de voz.</li>
-                        </ul>
+                        <p>Autenticação baseada no conhecimento</p>
+                        <div class="fragment">
+                            Exemplos:<br>
+                            <ul>
+                                <li>Usuário e senha</li>
+                                <li>Certificado digital</li>
+                                <li>Client ID e Client Secret</li>
+                            </ul>
+                        </div>
                     </section>
                     <section>
-                        <h2>O que é Autorização?</h2>
+                        <h3>&#8220;O que você tem&#8221;</h3>
+                        <p>Autenticação baseada na propriedade</p>
+                        <div class="fragment">
+                            Exemplos:<br>
+                            <ul>
+                                <li>Um token ou cartão físico</li>
+                                <li>Um código enviado por SMS ou aplicativo</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>&#8220;O que você é&#8221;</h3>
+                        <p>Autenticação baseada na característica</p>
+                        <div class="fragment">
+                            Exemplos:<br>
+                            <ul>
+                                <li>Impressão digital</li>
+                                <li>Identificação de íris</li>
+                                <li>Reconhecimento facial</li>
+                                <li>Reconhecimento de voz</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Autorização</h2>
                         <div class="fragment">
                             <blockquote cite="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o">
-                                É <small>(...)</small> garantir que apenas usuários autorizados consumam os recursos protegidos de um sistema computacional <small>(...)</small>
+                                É garantir que apenas usuários autorizados consumam os recursos protegidos de um sistema computacional
                             </blockquote>
                             <small><a href="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
                         </div>
                     </section>
-                    <section>
-                        <h3>Autorização</h3>
-                        Após saber quem é o cliente no processo de Autenticação, preciso agora entender o que ele pode fazer. Quais recursos ele pode consumir? Por quanto tempo?
-                        Posso restringir o acesso de um cliente a um recurso dependendo de diversos pontos:
-                        <ul>
-                            <li>Pela localização <em>(exemplo: através do GPS, posso apenas permitir se ele estiver fisicamente em um certo local)</em>;</li>
-                            <li>Pelo horário <em>(exemplo: o recurso de </em>backup<em> só pode ser efetuado durante o dia por gestores, senão apenas de madrugada)</em>;</li>
-                            <li>Consentimento manual do proprietário;</li>
-                            <li>Entre muitos outros.</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <div class="d-flex">
-                            <div class="half">
-                                <h2>Autenticação</h2>
-                            </div>
-                            <div class="half">
-                                <h2>Autorização</h2>
-                            </div>
+                    <section data-auto-animate>
+                        <h2>Autorização</h2>
+                        <div>
+                            Após saber quem é o cliente no processo de Autenticação, preciso agora entender o que ele pode fazer. Quais recursos ele pode consumir? Por quanto tempo?
                         </div>
                     </section>
                     <section>
                         <h3>Como efetuar autenticação e autorização?</h3>
-                        Para autenticação, podemos utilizar o <a href="https://openid.net/" target="_blank" rel="noopener">OpenID</a>.
-                        <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> é o protocolo mais conhecido de <strong>autorização</strong>.
-                        Ele, por si só, não contempla processos de autenticação <em>(por mais que o nome possa nos confundir)</em>.
-                        Possui diversos modelos de autorização através de seus <em>Grant Types</em> <em>(saiba como escolhê-los
-                            <a href="https://auth0.com/docs/api-auth/which-oauth-flow-to-use" target="_blank" rel="noopener">nesse link</a>)</em>.
+                        <div class="fragment">
+                            Para autenticação, podemos utilizar o <a href="https://openid.net/" target="_blank" rel="noopener">OpenID</a> ou implementar nosso próprio sistema <em>(por exemplo, através do banco de dados)</em>.
+                        </div>
+                        <br>
+                        <div class="fragment">
+                            <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> é o protocolo mais conhecido de <strong>autorização</strong>.
+                            Ele, por si só, não contempla processos de autenticação.
+                        </div>
                     </section>
                     <section>
-                        <h4>Famosa tela do OAuth 2</h4>
-                        <p class="small mb-0">Utilizando o <em>Grant</em> de <em>Authorization Code</em></p>
+                        <h4>Famosa tela de Autorização via OAuth 2</h4>
+                        <p class="small mb-0">
+                            Utilizando o <em>Grant</em> de <em>Authorization Code</em><br>
+                            <em>(saiba como escolher o Grant Type certo <a href="https://auth0.com/docs/api-auth/which-oauth-flow-to-use" target="_blank" rel="noopener">nesse link</a>)</em>
+                        </p>
                         <figure>
                             <a href="https://shotgundebugging.blogspot.com/2016/11/authorization-with-oauth2.html" target="_blank" rel="noopener">
                                 <img src="img/google-oauth-consent.png" alt="Tela de exemplo do fluxo de Authorization Code do OAuth 2.0 do Google" class="mb-0">
@@ -156,7 +164,7 @@
 
                 <section>
                     <section>
-                        <h1>Melhores práticas com access tokens</h1>
+                        <h1>Melhores práticas com <em>access tokens</em></h1>
                     </section>
                     <section>
                         <h2>O que é um <em>access token</em>?</h2>
@@ -167,43 +175,80 @@
                             <small><a href="https://docs.microsoft.com/pt-br/windows/win32/secauthz/access-tokens" target="_blank" rel="noopener">Fonte: MSDN</a></small>
                         </div>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h3>E no mundo de APIs?</h3>
-                        O processo de autenticação e autorização pode ser caro computacionalmente <em>(consultas a banco de dados, servidores de autenticação externos, criptografia de senha etc)</em>,
-                        portanto ao invés de sempre termos essa carga a cada requisição a nossos servidores, podemos ter um único <em>endpoint</em> de autenticação / autorização que irá realizar essa etapa
-                        uma vez e gerar um <em>access token</em> com as informações necessárias para autenticar e autorizar mais rapidamente o cliente nas requisições seguintes.
-                        Esse token geralmente possui <em>(e deve!)</em> um tempo de vida limitado, forçando o cliente a se reautenticar e reautorizar novamente após essa expiração.
-                        Esse segundo processo pode envolver um segundo tipo de objeto: os <em>refresh tokens</em>. Eles são utilizados para regerar um <em>access token</em> automaticamente, sem necessitar
-                        da intervenção manual do usuário para reautorizar o serviço que estamos utilizando (aquela famosa tela <code>"O serviço X está pedindo acesso aos seguintes dados de sua conta"</code>).
+                        <div>
+                            O processo de autenticação e autorização pode ser caro computacionalmente <em>(consultas a banco de dados, servidores de autenticação externos, criptografia de senha etc)</em>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>E no mundo de APIs?</h3>
+                        <div>
+                            Ao invés de sempre termos essa carga a cada requisição a nossos servidores, podemos ter um único <em>endpoint</em> de autenticação / autorização que irá realizar essa etapa
+                                uma vez e gerar um <em>access token</em> com as informações necessárias para autenticar e autorizar mais rapidamente o cliente nas requisições seguintes
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>E no mundo de APIs?</h3>
+                        <div>
+                            Esse <em>token</em> deve possuir um tempo de vida limitado, tanto para diminuir efeitos colaterais caso haja um vazamento quanto porque sua informação pode ficar desatualizada
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>E no mundo de APIs?</h3>
+                        <div>
+                            Esse segundo processo pode ser automatizado através de <em>refresh tokens</em>
+                            <div class="fragment">
+                                <br>
+                                Eles são utilizados para regerar um <em>access token</em> automaticamente, sem necessitar da intervenção manual do usuário
+                            </div>
+                        </div>
                     </section>
                     <section>
+                    </section>
+                    <section data-auto-animate>
                         <h3>Como deixar os <em>tokens</em> seguros?</h3>
                         <ul>
-                            <li>Utilize algoritmos de criptografia seguros;</li>
-                            <li>
-                                Cuidado com implementações de bibliotecas com falhas de segurança;
-                                <ul>
-                                    <li>Exemplo: <a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/" target="_blank" rel="noopener">JWT com alg=none</a>;</li>
+                            <li class="fragment">
+                                Utilizando algoritmos de criptografia seguros e com assinatura;
+                                <ul class="fragment">
+                                    <li>AES-256-GCM, ChaCha20+Poly1305, Ed25519 entre outros</li>
                                 </ul>
                             </li>
-                            <li>Não faça <em>commit</em> de chaves e outros segredos, nem deixe-os <em>hardcoded</em> na aplicação;</li>
-                            <li>
-                                Se for transitar informações sensíveis em um <em>token</em>, criptografe-o;
-                                <ul>
-                                    <li>Mas não guarde nada extremamente sensível <em>(como senhas e outras credenciais)</em>;</li>
-                                </li>
+                            <li class="fragment">
+                                Tendo cuidado com implementações de bibliotecas com falhas de segurança;
+                                <ul class="fragment">
+                                    <li>Exemplo: <a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/" target="_blank" rel="noopener">JWT com alg=none</a></li>
+                                </ul>
                             </li>
-                            <li>Se precisar armazenar do lado do cliente, utilize cookies seguros <em>(flags <code>httpOnly</code> e <code>secure</code>)</em> ao invés do <em>LocalStorage</em>;</li>
-                            <li>Apenas trafegue <em>tokens</em> no cabeçalho ou corpo da requisição, nunca na URL;</li>
-                            <li>Não exiba informações do <em>token</em> de seus <em>logs</em>;</li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>Como deixar os <em>tokens</em> seguros?</h3>
+                        <ul>
+                            <li>Não faça <em>commit</em> de chaves e outros segredos, nem deixe-os <em>hardcoded</em> na aplicação</li>
+                            <li class="fragment">Não guarde informações muito sensíveis <em>(como senhas e outras credenciais)</em></li>
+                            <li class="fragment">Se precisar armazenar do lado do cliente, utilize cookies seguros <em>(flags <code>httpOnly</code> e <code>secure</code>)</em> ao invés do <em>LocalStorage</em></li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>Como deixar os <em>tokens</em> seguros?</h3>
+                            <li>Apenas trafegue <em>tokens</em> no cabeçalho ou corpo da requisição, nunca na URL</li>
+                            <li class="fragment">Não exiba informações do <em>token</em> em seus <em>logs</em></li>
                         </ul>
                     </section>
                     <section>
                         <h6>Referências</h6>
                         <ul>
-                            <li><a href="https://jwt.io/" target="_blank" rel="noopener">JSON Web Token</a>, implementação mais conhecida;</li>
-                            <li><a href="https://paseto.io/" target="_blank" rel="noopener">PASETO</a>, implementação com design mais seguro;</li>
-                            <li><a href="https://viniciuscampitelli.com/slides/libsodium-php/" target="_blank" rel="noopener">Meu slides sobre a libsodium no PHP</a></li>
+                            <li><a href="https://jwt.io/" target="_blank" rel="noopener">JSON Web Token</a>, implementação mais conhecida</li>
+                            <li><a href="https://paseto.io/" target="_blank" rel="noopener">PASETO</a>, implementação com design mais seguro</li>
+                            <li>
+                                No PHP:
+                                <ul>
+                                    <li><a href="https://viniciuscampitelli.com/slides/criptografia-php/" target="_blank" rel="noopener">Meu slides sobre Criptografia</a></li>
+                                    <li><a href="https://viniciuscampitelli.com/slides/libsodium-php/" target="_blank" rel="noopener">Meu slides sobre a libsodium</a>, biblioteca moderna de criptografia</li>
+                                </ul>
+                            </li>
                         </ul>
                     </section>
                 </section>
@@ -212,61 +257,113 @@
                     <section>
                         <h1>Throttling e Rate Limiting</h1>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h2>O que é Throttling?</h2>
                         <div class="fragment">
-                            É a desaceleração intencional do processamento de uma requisição para prevenir sobrecarga de serviços.
-                            Imagine um <em>endpoint</em> que consuma grande recursos computacionais <em>(como, por exemplo, o processo de autenticação e autorização descritos anteriormente)</em>.
-                            Se um agente malicioso identificar esse recurso, ele pode se tornar muito visado para ataques, causando sobrecarga no nosso servidor e podendo gerar paralisação e até queda total do serviço.
-                            Nesses casos, podemos configurar que o servidor irá aceitar somente <code>x</code> requisições em algum(ns) <em>endpoint(s)</em> por um certo período de tempo.
-                            Após esse valor <code>x</code>, as requisições entrarão em uma fila para serem processadas alguns instantes depois, assim que as primeiras tiverem sido liberadas.
+                            É a desaceleração intencional do processamento de uma requisição para prevenir sobrecarga do servidor
                         </div>
                     </section>
-                    <section>
+                    <section data-auto-animate>
+                        <h2>O que é Throttling?</h2>
+                        <div>
+                            Imagine um <em>endpoint</em> que consuma grande recursos computacionais <em>(como, por exemplo, o processo de autenticação e autorização descritos anteriormente)</em>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>O que é Throttling?</h2>
+                        <div>
+                            Se um agente malicioso identificar esse recurso, ele pode se tornar muito visado para ataques, causando sobrecarga no nosso servidor e podendo gerar paralisação e até queda total do serviço
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>O que é Throttling?</h2>
+                        <div>
+                            Nesses casos, podemos configurar que o servidor irá aceitar somente <code>x</code> requisições em algum(ns) <em>endpoint(s)</em> por um certo período de tempo
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>O que é Throttling?</h2>
+                        <div>
+                            Após esse valor <code>x</code>, as requisições entrarão em uma fila para serem processadas alguns instantes depois, assim que as primeiras tiverem sido liberadas
+                        </div>
+                    </section>
+                    <section></section>
+                    <section data-auto-animate>
                         <h2>Mas então o que é Rate Limiting?</h2>
                         <div class="fragment">
-                            Ao contrário do <em>Throttling</em>, em que o servidor irá responder à requisição após um certo período <code>x</code>, a prática de <em>Rate Limiting</em> consiste em fazê-lo se recusar
-                            a responder após um certo número de requisições, geralmente emitindo um status HTTP <code>503 Service Unavailable</code>.
+                            Ao contrário do <em>Throttling</em>, em a requisição será processada com um atraso, <em>Rate Limiting</em> é fazer o servidor se recusar
+                            a responder após um certo número de requisições
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Mas então o que é Rate Limiting?</h2>
+                        <div>
+                            Nesses casos, devemos emitir um status HTTP <code>503 Service Unavailable</code> ou <code>429 Too Many Requests</code>
                         </div>
                     </section>
                     <section>
                         <h3>Como essas duas práticas se relacionam entre si?</h3>
                         Geralmente, primeiro aplicamos uma política de <em>Throttling</em> para desacelerar o processamento nas <code>x</code> primeiras requisições, e após um outro número <code>y</code>, iremos
-                        simplesmente parar de responder.
+                        simplesmente parar de responder
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h3>Onde e como configurar essas políticas?</h3>
-                        Você deve configurá-las em seu servidor Web <em>(por exemplo, Apache, IIS ou nginx)</em> ou no seu serviço de DNS <em>(por exemplo, o Cloudflare)</em>.
-                        Tomando como exemplo o <em>nginx</em>, utilizaremos o módulo <code>ngx_http_limit_req_module</code> <em>(que implementa o mais conhecido algoritmo desse tipo de prática, o
-                            <a href="https://pt.wikipedia.org/wiki/Leaky_Bucket" target="_blank" rel="noopener">Leaky Bucket</a>)</em>:
+                        <div>
+                            Você deve configurá-las em seu servidor Web <em>(por exemplo, Apache, IIS ou nginx)</em> ou no seu serviço de DNS <em>(por exemplo, o Cloudflare)</em>
+                        </div>
                     </section>
-                    <section>
-                        O código abaixo irá proteger nosso <em>endpoint</em> <code>/login</code>, permitindo apenas 10 requisições por segundo por IP <em>(ou seja, 1 a cada 100ms)</em>.
-                        Mas também permitimos um <em>burst</em>, permitindo que 5 requisições extras sejam colocadas na fila de processamento antes de serem enviadas para o <code>upstream</code>.
-                        Nesse caso, se recebermos de um mesmo IP 10 requisições em um período de 100ms, o fluxo que ocorrerá será:
-                        <ol>
-                            <li>A 1&ordf;a requisição será enviada instantaneamente para o <code>upstream</code>;</li>
-                            <li>A 2&ordf;a, 3&ordf;a, 4&ordf;a, 5&ordf;a e 6&ordf;a requisições serão colocadas em uma fila e serão processadas sequencialmente após o término ao anterior;</li>
-                            <li>A 7&ordf;a requisição em adiante será negada, retornando o código HTTP <code>503 Service Unavailable</code>.</li>
-                        </ol>
-                        <pre>
-                            <code>
+                    <section data-auto-animate>
+                        <h3>Onde e como configurar essas políticas?</h3>
+                        <div>
+                            Tomando como exemplo o <em>nginx</em>, utilizaremos o módulo <code>ngx_http_limit_req_module</code> <em>(que implementa o mais conhecido algoritmo desse tipo de prática, o
+                                <a href="https://pt.wikipedia.org/wiki/Leaky_Bucket" target="_blank" rel="noopener">Leaky Bucket</a>)</em>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>Onde e como configurar essas políticas?</h3>
+                        <div>
+                            <pre><code class="nginx" data-trim>
                                 limit_req_zone $binary_remote_addr zone=login_zone:10m rate=10r/s;
 
                                 server {
                                     location /login {
                                         limit_req zone=login_zone burst=5;
 
-                                        // outras configurações padrões do meu bloco location...
+                                        # outras configurações padrões do meu bloco location...
                                     }
                                 }
-                            </code>
-                        </pre>
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>Onde e como configurar essas políticas?</h3>
+                        <div>
+                            O código anterior irá proteger nosso <em>endpoint</em> <code>/login</code>, permitindo apenas 10 requisições por segundo por IP <em>(ou seja, 1 a cada 100ms)</em>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>Onde e como configurar essas políticas?</h3>
+                        <div>
+                            Mas também permitimos um <em>burst</em>, permitindo que 5 requisições extras sejam colocadas na fila de processamento antes de serem enviadas para o <code>upstream</code>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>Onde e como configurar essas políticas?</h3>
+                        <div>
+                            <p>Nesse caso, se recebermos de um mesmo IP 10 requisições em um período de 100ms, o que ocorrerá?</p>
+                            <ul>
+                                <li class="fragment">A 1&ordf; requisição será processada instantaneamente</li>
+                                <li class="fragment">As 2&ordf;, 3&ordf;, 4&ordf;, 5&ordf; e 6&ordf; requisições serão colocadas em uma fila e serão processadas sequencialmente após o término da anterior</li>
+                                <li class="fragment">As 7&ordf;, 8&ordf;, 9&ordf; e 10&ordf; requisições serão negadas</li>
+                            </ul>
+                        </div>
                     </section>
                     <section>
                         <h6>Referências</h6>
-                        https://support.cloudflare.com/hc/en-us/articles/115001635128-Configuring-Cloudflare-Rate-Limiting
-                        https://www.nginx.com/blog/rate-limiting-nginx/#Two-Stage-Rate-Limiting
+                        <ul>
+                            <li><a href="https://support.cloudflare.com/hc/en-us/articles/115001635128-Configuring-Cloudflare-Rate-Limiting" target="_blank" rel="noopener">Como implementar no CloudFlare</a></li>
+                            <li><a href="https://www.nginx.com/blog/rate-limiting-nginx" target="_blank" rel="noopener">Como implementar no nginx</a></li>
+                        </ul>
                     </section>
                 </section>
 
@@ -274,25 +371,40 @@
                     <section>
                         <h1>Camuflagem de IDs sequenciais</h1>
                     </section>
-                    <section>
-                        <h2>O que é um ID sequencial e por que escondê-lo?</h2>
-                        Ao criarmos <em>endpoints</em> no formato <code>/user/1</code>, <code>/user/2</code>, <code>/user/3</code> etc, estamos
-                        fornecendo uma informação muito valiosa sobre a quantidade de registros que possuímos daquela entidade.
-                        Isso pode ser utilizado tanto por alguém mal intencionado quanto por algum competidor.
-                        Cuidado com espionagem industrial! <img src="https://img.icons8.com/color/48/000000/spy-male--v1.png"/>
+                    <section data-auto-animate>
+                        <h3>O que é um ID sequencial e por que escondê-lo?</h3>
+                        <div>
+                            Ao criarmos <em>endpoints</em> no formato <code>/user/1</code>, <code>/user/2</code>, <code>/user/3</code> etc, estamos
+                            fornecendo uma informação muito valiosa sobre a quantidade de registros que possuímos daquela entidade
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>O que é um ID sequencial e por que escondê-lo?</h3>
+                        <div>
+                            Isso pode ser utilizado tanto por alguém mal intencionado quanto por algum competidor.
+                            <p class="fragment">Cuidado com espionagem industrial! <img src="https://img.icons8.com/color/48/000000/spy-male--v1.png"></p>
+                        </div>
                     </section>
                     <section>
                         <h2>Como resolver?</h2>
-                        Para cada entidade que possui um <em>endpoint</em> aberto de consulta, você pode criar um segundo campo na tabela com um valor único para aquele registro.
-                        Esse valor pode ser um <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener">GUID</a>, um hash do ID incremental, um valor aleatório...
-                        Então, transforme seu recurso <code>/user/&lt;IdIncremental&gt;</code> em <code>/user/&lt;Identificador&gt;</code>.
+                        <ul>
+                            <li>
+                                Crie um segundo campo na tabela com um valor único para aquele registro
+                                <ul class="fragment">
+                                    <li>Esse valor pode ser um <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener">GUID</a>, um hash do ID incremental ou um valor aleatório...</li>
+                                </ul>
+                            </li>
+                            <li class="fragment">Então, transforme o recurso <code>/user/IdIncremental</code> em <code>/user/Identificador</code></li>
+                        </ul>
                     </section>
                     <section>
                         <h6>Referências</h6>
-                        PHP: https://www.php.net/manual/en/function.com-create-guid.php
-                        NodeJS: https://github.com/uuidjs/uuid
-                        Python: https://docs.python.org/3/library/uuid.html
-                        Java: https://kodejava.org/how-do-i-generate-uuid-guid-in-java/
+                        <ul>
+                            <li><a href="https://www.php.net/manual/en/function.com-create-guid.php" target="_blank" rel="noopener">GUID Em PHP</a></li>
+                            <li><a href="https://github.com/uuidjs/uuid" target="_blank" rel="noopener">UUID Em NodeJS</a></li>
+                            <li><a href="https://docs.python.org/3/library/uuid.html" target="_blank" rel="noopener">UUID Em Python</a></li>
+                            <li><a href="https://kodejava.org/how-do-i-generate-uuid-guid-in-java/" target="_blank" rel="noopener">UUID Em Java</a></li>
+                        </ul>
                     </section>
                 </section>
 
@@ -300,87 +412,133 @@
                     <section>
                         <h1 class="h2">Criptografando e assinando requisições e respostas</h1>
                     </section>
-                    <section>
-                        Para usuários avançados e sistemas críticos, podemos adicionar uma camada extra de proteção: criptografar os dados da requisição e/ou da resposta.
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            Para usuários avançados e sistemas críticos, podemos adicionar uma camada extra de proteção: criptografar os dados da requisição e da resposta
+                        </div>
                     </section>
-                    <section>
-                        Mas, espera aí! Eu já uso HTTPS. Meu dados já estão sendo criptografados usando TLS.
-                        <div class="fragment">
-                            <br>
-                            Após o handshake do protocolo, realmente os dados transitados estão criptografados. Mas podemos sofrer um ataque de <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener">Man in the Middle</a>.
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            <blockquote>
+                                Mas, espera aí! Eu já uso HTTPS. Meu dados já estão sendo criptografados usando TLS.
+                            </blockquote>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            Após o estabelecimento do protocolo, realmente os dados transitados estão criptografados, mas ainda podemos sofrer um ataque de <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener">Man in the Middle</a>
+                        </div>
+                    </section>
+                    <section></section>
+                    <section data-auto-animate>
+                        <h3>Man in the Middle</h3>
+                        <ul>
+                            <li>Existem diversos <em>hops</em> entre o cliente e o servidor. Quem garante que todos os <em>gateways</em> do caminho são seguros?</li>
+                            <li class="fragment">Se você não for o administrador da sua rede local, alguém pode instalar uma Autoridade Certificadora em sua máquina e emitir certificados próprios</li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h3>Man in the Middle</h3>
+                        <ul>
+                            <li>
+                                Nem todos os sites utilizam <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security" target="_blank" rel="noopener">HSTS</a>
+                                <ul class="fragment">
+                                    <li>Ou seja, pode haver uma conexão HTTP antes do redirecionamento para HTTPS pelo servidor</li>
+                                </ul>
+                            </li>
+                            <li class="fragment">Teoria da conspiração: grandes empresas possuem <em>backdoors</em> para bisbilhotar seu tráfego</li>
+                        </ul>
+                    </section>
+                    <section></section>
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            <p>Antes de seguir nessa etapa, faça um <a href="https://owasp.org/www-community/Threat_Modeling" target="_blank" rel="noopener">Threat Modeling</a> e certifique-se que realmente valhe a pena</p>
+                            <p class="fragment">Compensa instalar um sistema de segurança de última geração em um depósito que não possui algo de extremo valor dentro?</p>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            <blockquote>
+                                SIM! Meu sistema é crítico e preciso disso. <span class="fragment">Ou eu não confio em grandes corporações.</span>
+                            </blockquote>
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            Você pode exigir que toda requisição tenha seu corpo criptografado pelo cliente, utilizando um segredo em que só vocês dois sabem
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            Por exemplo, você pode utilizar uma terceira informação fora o Client ID e o Client Secret e usá-la como chave assimétrica, ou fornecer um certificado digital para seu cliente
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            Do lado do servidor, você utiliza essa informação sigilosa para descriptografar o corpo da requisição - se falhar, você emite um erro e para o processamento
+                        </div>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Precaução extra</h2>
+                        <div>
+                            Entretanto, esse processo de descriptografia pode ser muito custoso operacionalmente, podendo ser um outro ponto de ataque DoS <em>(lembre-se do que falamos na seção de </em>Throttling e Rate Limiting<em>)</em>.
+                            Você pode, então, utilizar um processo de assinatura digital além da criptografia.
                         </div>
                     </section>
                     <section>
-                        <ul>
-                            <li>Existem diversos <em>hops</em> entre o cliente e o servidor. Quem garante que todos os <em>gateways</em> do caminho são seguros?</li>
-                            <li class="fragment">Se você não for o administrador da sua rede local, alguém pode instalar uma Autoridade Certificadora em sua máquina e emitir certificados próprios;</li>
-                            <li class="fragment">Nem todos os sites utilizam HSTS;</li>
-                            <li class="fragment">Teoria da conspiração: grandes empresas possuem <em>backdoors</em> para bisbilhotar seu tráfego.</li>
-                        </ul>
+                        <h3>Fluxo de criptografia e assinatura</h3>
+                        <div>
+                            O cliente...
+                            <ul>
+                                <li>Autentica na sua API fornecendo as credenciais</li>
+                                <li class="fragment">
+                                    Para cada requisição, assina e criptografa os dados <em>(combinação do corpo da requisição + URL)</em>;
+                                    <ul>
+                                        <li class="fragment">Utiliza um algoritmo de hash para assinar os dados</li>
+                                        <li class="fragment">Criptografa os dados mais a assinatura</li>
+                                        <li class="fragment">Envia a requisição somente com os dados criptografados</li>
+                                    </ul>
+                                </li>
+                                <li class="fragment">
+                                    Para cada resposta seguinte, ele deve:
+                                    <ul>
+                                        <li class="fragment">Verificar a assinatura</li>
+                                        <li class="fragment">Descriptografar o corpo</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </section>
                     <section>
-                        Antes de seguir nessa etapa, faça uma Análise de Ameaças e certifique-se que realmente valhe a pena. Compensa instalar um sistema de segurança de última geração em um depósito que não possui algo de extremo valor dentro?
-                    </section>
-                    <section>
-                        SIM! Meu sistema é crítico e preciso disso. <span class="fragment">Ou eu não confio em grandes corporações.</span>
-                    </section>
-                    <section>
-                        Você pode pedir que toda requisição tenha seu corpo criptografado pelo cliente, utilizando um segredo em que só vocês dois sabem.
-                        Por exemplo, você pode utilizar uma terceira informação fora o Client ID e o Client Secret e usá-la como chave assimétrica. Ou fornecer um certificado digital para seu cliente.
-                        Do lado do servidor, você utiliza essa informação sigilosa para descriptografar o corpo da requisição. Se ela falhar, você emite um erro e para o processamento.
-                        Entretanto, esse processo de descriptografia pode ser muito custoso operacionalmente, podendo ser um outro ponto de ataque DoS <em>(lembre-se do que falamos na seção de </em>Throttling e Rate Limiting<em>)</em>.
-                        Você pode, então, utilizar um processo de assinatura digital além da criptografia.
-                    </section>
-                    <section>
-                        O fluxo é o seguinte:
-                        <div class="d-flex">
-                            <div>
-                                O cliente...
-                                <ol>
-                                    <li>Se autentica na sua aplicação fornecendo suas credenciais;</li>
-                                    <li>
-                                        Para cada requisição, deve assinar e criptografar os dados (combinação do corpo da requisição + URL);
-                                        <ol>
-                                            <li>Utiliza um algoritmo de hash para assinar os dados;</li>
-                                            <li>Criptografa os dados mais a assinatura;</li>
-                                            <li>Envia a requisição somente com os dados criptografados.</li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        Para cada resposta seguinte, ele deve:
-                                        <ol>
-                                            <li>Verificar a assinatura;</li>
-                                            <li>Descriptografar o corpo.</li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div>
-                                Servidor
-                                <ol>
-                                    <li>
-                                        A cada requisição recebida, ele deve:
-                                        <ol>
-                                            <li>Verificar a assinatura;</li>
-                                            <li>Descriptografar o corpo.</li>
-                                        </ol>
-                                    </li>
-                                    <li>
-                                        Ao responder à requisição, deve assinar e criptografar os dados (combinação do corpo da requisição + URL);
-                                        <ol>
-                                            <li>Utiliza um algoritmo de hash para assinar os dados;</li>
-                                            <li>Criptografa os dados mais a assinatura;</li>
-                                            <li>Envia a requisição somente com os dados criptografados.</li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </div>
+                        <h3>Fluxo de criptografia e assinatura</h3>
+                        <div>
+                            A cada requisição recebida, o servidor deve...
+                            <ul>
+                                <li class="fragment">Verificar a assinatura</li>
+                                <li class="fragment">Descriptografar o corpo</li>
+                                <li class="fragment">
+                                    Ao responder à requisição, deve assinar e criptografar os dados <em>(combinação do corpo da requisição + URL)</em>;
+                                    <ul>
+                                        <li class="fragment">Utiliza um algoritmo de hash para assinar os dados</li>
+                                        <li class="fragment">Criptografa os dados mais a assinatura</li>
+                                        <li class="fragment">Envia a requisição somente com os dados criptografados</li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
                     </section>
                 </section>
 
                 <section>
-                    <h2>Recapitulando...</h2>
+                    <h2>Concluindo...</h2>
                     <ul>
                         <li class="fragment">
                             Segurança não é trivial<br>
@@ -398,9 +556,17 @@
 
                 <section>
                     <h2>Obrigado!</h2>
-                    <img src="img/qrcode.png" alt="QR Code"><br>
-                    <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank">viniciuscampitelli.com</a>
-                    Estou no GitHub e Twitter como <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a>
+
+                    <div class="d-flex align-items-center">
+                        <h4 class="mr-3 text-right">Slides</h4>
+                        <div><img src="img/qr.jpg" alt="QR Code"></div>
+                        <div><a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank">viniciuscampitelli.com</a></div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <h4 class="mr-3 text-right">Contato</h4>
+                        <div>GitHub e Twitter</div>
+                        <div><a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></div>
+                    </div>
                 </section>
             </div>
         </div>
@@ -410,6 +576,10 @@
         <script>
             Reveal.initialize({
                 hash: true,
+                slideNumber: true,
+                mouseWheel: false,
+                history: true,
+                overview: false,
                 plugins: [RevealHighlight]
             });
         </script>
