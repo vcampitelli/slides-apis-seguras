@@ -11,27 +11,7 @@
         <link rel="stylesheet" href="reveal.js/dist/theme/solarized.css" id="theme">
 
         <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
-        <style>
-            .reveal blockquote > small {
-                line-height: 1;
-                vertical-align: baseline;
-            }
-            .reveal blockquote[cite] + small,
-            figcaption {
-                font-size: 0.5em;
-                font-style: italic;
-            }
-            .small {
-                font-size: 0.5em;
-            }
-            .mb-0 {
-                margin-bottom: 0 !important;
-            }
-            .d-flex {
-                display: flex;
-                justify-content: center;
-            }
-        </style>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
@@ -40,17 +20,19 @@
                 <section>
                     <h1>Criando APIs seguras</h1>
                 </section>
+
                 <section>
                     <h2>Quem sou eu?</h2>
-                    <img src="http://gravatar.com/avatar/375596b28a94ecfaec5d63ff64c7f948">
+                    <img src="https://gravatar.com/avatar/375596b28a94ecfaec5d63ff64c7f948">
                     <ul>
                         <li>Vinícius Campitelli</li>
                         <li>Co-fundador do <a href="https://curseduca.com" target="_blank" rel="noopener">Curseduca</a></li>
-                        <li>Membro do <a href="http://phpsp.org.br" target="_blank" rel="noopener">PHPSP</a></li>
+                        <li>Membro do <a href="https://phpsp.org.br" target="_blank" rel="noopener">PHPSP</a></li>
                         <li>GitHub e Twitter são <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></li>
-                        <li>Slides em <a href="https://viniciuscampitelli.com/slides-apis-seguros/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
+                        <li>Slides em <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
                     </ul>
                 </section>
+
                 <section>
                     <h2>Agenda</h2>
                     <ul>
@@ -61,6 +43,7 @@
                         <li>Criptografando e assinando requisições e respostas</li>
                     </ul>
                 </section>
+
                 <section>
                     <section>
                         <h1>Autenticação e autorização</h1>
@@ -170,6 +153,7 @@
                         </ul>
                     </section>
                 </section>
+
                 <section>
                     <section>
                         <h1>Melhores práticas com access tokens</h1>
@@ -223,6 +207,7 @@
                         </ul>
                     </section>
                 </section>
+
                 <section>
                     <section>
                         <h1>Throttling e Rate Limiting</h1>
@@ -284,6 +269,7 @@
                         https://www.nginx.com/blog/rate-limiting-nginx/#Two-Stage-Rate-Limiting
                     </section>
                 </section>
+
                 <section>
                     <section>
                         <h1>Camuflagem de IDs sequenciais</h1>
@@ -309,16 +295,112 @@
                         Java: https://kodejava.org/how-do-i-generate-uuid-guid-in-java/
                     </section>
                 </section>
+
                 <section>
                     <section>
-                        <h1>Criptografando e assinando requisições e respostas</h1>
+                        <h1 class="h2">Criptografando e assinando requisições e respostas</h1>
                     </section>
                     <section>
-                        Para usuários avançados e sistemas críticos, podemos adicionar uma camada extra de proteção: criptografar a requisição e/ou a resposta.
-                        Mas, espera aí! Eu já uso HTTPS. Meu dados já estão sendo criptografados usando TLS.
-                        Sim, mas existem diversos <em>hops</em> entre o cliente e o servidor.
-                        Podemos sofrer um ataque de <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener">Man in the Middle</a>.
+                        Para usuários avançados e sistemas críticos, podemos adicionar uma camada extra de proteção: criptografar os dados da requisição e/ou da resposta.
                     </section>
+                    <section>
+                        Mas, espera aí! Eu já uso HTTPS. Meu dados já estão sendo criptografados usando TLS.
+                        <div class="fragment">
+                            <br>
+                            Após o handshake do protocolo, realmente os dados transitados estão criptografados. Mas podemos sofrer um ataque de <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener">Man in the Middle</a>.
+                        </div>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Existem diversos <em>hops</em> entre o cliente e o servidor. Quem garante que todos os <em>gateways</em> do caminho são seguros?</li>
+                            <li class="fragment">Se você não for o administrador da sua rede local, alguém pode instalar uma Autoridade Certificadora em sua máquina e emitir certificados próprios;</li>
+                            <li class="fragment">Nem todos os sites utilizam HSTS;</li>
+                            <li class="fragment">Teoria da conspiração: grandes empresas possuem <em>backdoors</em> para bisbilhotar seu tráfego.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        Antes de seguir nessa etapa, faça uma Análise de Ameaças e certifique-se que realmente valhe a pena. Compensa instalar um sistema de segurança de última geração em um depósito que não possui algo de extremo valor dentro?
+                    </section>
+                    <section>
+                        SIM! Meu sistema é crítico e preciso disso. <span class="fragment">Ou eu não confio em grandes corporações.</span>
+                    </section>
+                    <section>
+                        Você pode pedir que toda requisição tenha seu corpo criptografado pelo cliente, utilizando um segredo em que só vocês dois sabem.
+                        Por exemplo, você pode utilizar uma terceira informação fora o Client ID e o Client Secret e usá-la como chave assimétrica. Ou fornecer um certificado digital para seu cliente.
+                        Do lado do servidor, você utiliza essa informação sigilosa para descriptografar o corpo da requisição. Se ela falhar, você emite um erro e para o processamento.
+                        Entretanto, esse processo de descriptografia pode ser muito custoso operacionalmente, podendo ser um outro ponto de ataque DoS <em>(lembre-se do que falamos na seção de </em>Throttling e Rate Limiting<em>)</em>.
+                        Você pode, então, utilizar um processo de assinatura digital além da criptografia.
+                    </section>
+                    <section>
+                        O fluxo é o seguinte:
+                        <div class="d-flex">
+                            <div>
+                                O cliente...
+                                <ol>
+                                    <li>Se autentica na sua aplicação fornecendo suas credenciais;</li>
+                                    <li>
+                                        Para cada requisição, deve assinar e criptografar os dados (combinação do corpo da requisição + URL);
+                                        <ol>
+                                            <li>Utiliza um algoritmo de hash para assinar os dados;</li>
+                                            <li>Criptografa os dados mais a assinatura;</li>
+                                            <li>Envia a requisição somente com os dados criptografados.</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        Para cada resposta seguinte, ele deve:
+                                        <ol>
+                                            <li>Verificar a assinatura;</li>
+                                            <li>Descriptografar o corpo.</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div>
+                                Servidor
+                                <ol>
+                                    <li>
+                                        A cada requisição recebida, ele deve:
+                                        <ol>
+                                            <li>Verificar a assinatura;</li>
+                                            <li>Descriptografar o corpo.</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        Ao responder à requisição, deve assinar e criptografar os dados (combinação do corpo da requisição + URL);
+                                        <ol>
+                                            <li>Utiliza um algoritmo de hash para assinar os dados;</li>
+                                            <li>Criptografa os dados mais a assinatura;</li>
+                                            <li>Envia a requisição somente com os dados criptografados.</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Recapitulando...</h2>
+                    <ul>
+                        <li class="fragment">
+                            Segurança não é trivial<br>
+                            <span class="fragment"><span class="color-transparent">Segurança</span> não é fácil</span><br>
+                            <span class="fragment"><span class="color-transparent">Segurança</span> não é para leigos</span>
+                        </li>
+                        <li class="fragment">
+                            Nenhum sistema operante é <strong>invencível</strong><span class="fragment">,<br>
+                                mas você <strong>deve dificultar</strong> o trabalho de atacantes
+                            </span>
+                        </li>
+                        <li class="fragment">Saiba equilibrar e avaliar a relação de custo-benefício entre segurança e usabilidade</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Obrigado!</h2>
+                    <img src="img/qrcode.png" alt="QR Code"><br>
+                    <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank">viniciuscampitelli.com</a>
+                    Estou no GitHub e Twitter como <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a>
                 </section>
             </div>
         </div>
@@ -326,13 +408,8 @@
         <script src="reveal.js/dist/reveal.js"></script>
         <script src="reveal.js/plugin/highlight/highlight.js"></script>
         <script>
-            // More info about initialization & config:
-            // - https://revealjs.com/initialization/
-            // - https://revealjs.com/config/
             Reveal.initialize({
                 hash: true,
-
-                // Learn about plugins: https://revealjs.com/plugins/
                 plugins: [RevealHighlight]
             });
         </script>

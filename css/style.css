@@ -1,0 +1,25 @@
+.reveal blockquote > small {
+  line-height: 1;
+  vertical-align: baseline;
+}
+.reveal blockquote[cite] + small,
+figcaption {
+  font-size: 0.5em;
+  font-style: italic;
+}
+.small {
+  font-size: 0.5em;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.d-flex {
+  display: flex;
+  justify-content: center;
+}
+h1.h2 {
+  font-size: 2.11em;
+}
+.color-transparent {
+  color: transparent;
+}
