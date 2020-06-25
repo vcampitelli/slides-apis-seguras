@@ -1,14 +1,135 @@
-Com a disseminação do uso de microserviços, vários aspectos de segurança em nossas APIs precisam ser repensados, pois um simples problema pode ser escalado a níveis preocupantes.
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-Pontos que serão abordados:
+        <title>Criando APIs seguras | Vinícius Campitelli</title>
 
-    como fazer o uso correto dos processos de autenticação e autorização (além da diferença entre eles) utilizando OAuth2;
+        <link rel="stylesheet" href="reveal.js/dist/reset.css">
+        <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
 
-    melhores práticas na adoção de access tokens e refresh tokens com JWT e suas alternativas;
+        <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+    </head>
 
-    aplicação de throttling e rate limiting;
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Criando APIs seguras</h1>
+                </section>
+                <section>
+                    <h2>Quem sou eu?</h2>
+                    <ul>
+                        <li>Vinícius Campitelli &bull; <a href="https://vcampitelli.github.io" target="_blank" rel="noopener">vcampitelli.github.io</a></li>
+                        <li>Co-fundador do <a href="https://curseduca.com" target="_blank" rel="noopener">Curseduca</a></li>
+                        <li>Membro do <a href="http://phpsp.org.br" target="_blank" rel="noopener">PHPSP</a></li>
+                        <li>GitHub e Twitter são <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></li>
+                        <li>Slides em <a href="https://viniciuscampitelli.com/slides-apis-seguros/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Agenda</h2>
+                    <ul>
+                        <li>Autenticação e autorização;</li>
+                        <li>Melhores práticas com access tokens;</li>
+                        <li>Throttling e Rate Limiting;</li>
+                        <li>Camuflagem de IDs sequenciais;</li>
+                        <li>Criptografando e assinando requisições e respostas.</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>Autenticação e autorização</h1>
+                    </section>
+                    <section>
+                        <h2>O que é Autenticação?</h2>
+                        <div class="fragment">
+                            <blockquote cite="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o">
+                                é o ato de estabelecer ou confirmar algo (ou alguém) como autêntico
+                            </blockquote>
+                            <small><a href="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>O que é Autorização?</h2>
+                        <div class="fragment">
+                            <blockquote cite="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o">
+                                é o mecanismo responsável por garantir que apenas usuários autorizados consumam os recursos protegidos de um sistema computacional
+                            </blockquote>
+                            <small><a href="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Melhores práticas com access tokens</h1>
+                    </section>
+                    <section>
+                        <h2>O que são <em>access tokens</em>?</h2>
+                        <div class="fragment">
+                            <blockquote cite="https://docs.microsoft.com/pt-br/windows/win32/secauthz/access-tokens">
+                                é um objeto que descreve o contexto de segurança de um processo
+                            </blockquote>
+                            <small><a href="https://docs.microsoft.com/pt-br/windows/win32/secauthz/access-tokens" target="_blank" rel="noopener">Fonte: MSDN</a></small>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Throttling e Rate Limiting</h1>
+                    </section>
+                    <section>
+                        <h2>O que é Throttling?</h2>
+                        <div class="fragment">
+                            É a desaceleração da resposta do servidor para prevenir sobrecarga
+                        </div>
+                        <h2>Mas então o que é Rate Limiting?</h2>
+                        <div class="fragment">
+                            É a recusa do servidor em responder após um certo número de requisições
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Camuflagem de IDs sequenciais</h1>
+                        <div class="fragment">
+                            Ao criarmos <em>endpoints</em> no formato <code>/user/1</code>, <code>/user/2</code>, <code>/user/3</code>, estamos
+                            fornecendo uma informação muito valiosa sobre a quantidade de registros que possuímos daquela entidade.
+                            Isso pode ser utilizado tanto por alguém mal intencionado quanto por algum competidor.
+                            Espionagem industrial existe!
+                        </div>
+                    </section>
+                    <section>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Criptografando e assinando requisições e respostas</h1>
+                    </section>
+                    <section>
+                        Para usuários avançados e sistemas críticos, podemos adicionar uma camada extra de proteção: criptografar a requisição e/ou a resposta.
+                        Mas, espera aí! Eu já uso HTTPS. Meu dados já estão sendo criptografados usando TLS.
+                        Sim, mas existem diversos <em>hops</em> entre o cliente e o servidor.
+                        Podemos sofrer um ataque de <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener">Man in the Middle</a>.
+                    </section>
+                </section>
+            </div>
+        </div>
 
-    camuflagem de IDs sequencias (através de GUIDs ou hashes);
+        <script src="reveal.js/dist/reveal.js"></script>
+        <script src="reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
 
-    criptografando e assinando a requisição para evitar tampering.
-
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealHighlight]
+            });
+        </script>
+    </body>
+</html>
