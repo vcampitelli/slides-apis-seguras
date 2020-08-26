@@ -10,8 +10,9 @@
         <link rel="stylesheet" href="reveal.js/dist/reveal.css">
         <link rel="stylesheet" href="reveal.js/dist/theme/solarized.css" id="theme">
 
-        <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+        <link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css" id="highlight-theme">
         <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -32,8 +33,8 @@
                             <ul>
                                 <li>Co-fundador do <a href="https://curseduca.com" target="_blank" rel="noopener">Curseduca</a></li>
                                 <li>Membro do <a href="https://phpsp.org.br" target="_blank" rel="noopener">PHPSP</a></li>
-                                <li>GitHub e Twitter como <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></li>
-                                <li>Slides em <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
+                                <li>GitHub e Twitter: <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></li>
+                                <li>Slides: <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -56,11 +57,16 @@
                     </section>
                     <section data-auto-animate>
                         <h2>Autenticação</h2>
-                        <div class="fragment">
-                            <blockquote cite="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o">
-                                É o ato de estabelecer ou confirmar algo (ou alguém) como autêntico <small>(...)</small>
-                            </blockquote>
-                            <small><a href="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
+                        <div class="r-stack">
+                            <div>
+                                <blockquote cite="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o">
+                                    É o ato de estabelecer ou confirmar algo (ou alguém) como autêntico <small>(...)</small>
+                                </blockquote>
+                                <small><a href="https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
+                            </div>
+                            <div class="fragment fade-up">
+                                <img src="img/porteiro-castelo-ratimbum.png">
+                            </div>
                         </div>
                     </section>
                     <section data-auto-animate>
@@ -85,12 +91,16 @@
                     <section>
                         <h3>&#8220;O que você tem&#8221;</h3>
                         <p>Autenticação baseada na propriedade</p>
-                        <div class="fragment">
-                            Exemplos:<br>
-                            <ul>
-                                <li>Um token ou cartão físico</li>
-                                <li>Um código enviado por SMS ou aplicativo</li>
-                            </ul>
+                        <div class="fragment">Exemplos:</div>
+                        <div class="d-flex">
+                            <div class="fragment">
+                                <img src="img/yubikey.png" style="height: 20%"><br>
+                                Token ou cartão físico
+                            </div>
+                            <div class="fragment">
+                                <img src="img/google-authenticator.png" style="height: 20%"><br>
+                                Código via aplicativo
+                            </div>
                         </div>
                     </section>
                     <section>
@@ -106,16 +116,21 @@
                             </ul>
                         </div>
                     </section>
-                    <section data-auto-animate>
-                        <h2>Autorização</h2>
-                        <div class="fragment">
-                            <blockquote cite="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o">
-                                É garantir que apenas usuários autorizados consumam os recursos protegidos de um sistema computacional
-                            </blockquote>
-                            <small><a href="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
+                    <section>
+                        <div class="r-stack">
+                            <div>
+                                <h2>Autorização</h2>
+                                <blockquote cite="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o">
+                                    É garantir que apenas usuários autorizados consumam os recursos protegidos de um sistema computacional
+                                </blockquote>
+                                <small><a href="https://pt.wikipedia.org/wiki/Autoriza%C3%A7%C3%A3o" target="_blank" rel="noopener">Fonte: Wikipedia</a></small>
+                            </div>
+                            <div class="fragment">
+                                <img src="img/authorized-personnel-signs.jpg">
+                            </div>
                         </div>
                     </section>
-                    <section data-auto-animate>
+                    <section>
                         <h2>Autorização</h2>
                         <div>
                             Após saber quem é o cliente no processo de Autenticação, preciso agora entender o que ele pode fazer. Quais recursos ele pode consumir? Por quanto tempo?
@@ -140,7 +155,7 @@
                         </p>
                         <figure>
                             <a href="https://shotgundebugging.blogspot.com/2016/11/authorization-with-oauth2.html" target="_blank" rel="noopener">
-                                <img src="img/google-oauth-consent.png" alt="Tela de exemplo do fluxo de Authorization Code do OAuth 2.0 do Google" class="mb-0">
+                                <img src="img/google-oauth-consent.png" alt="Tela de exemplo do fluxo de Authorization Code do OAuth 2.0 do Google" class="mb-0" data-width="443">
                             </a>
                             <figcaption><a href="https://shotgundebugging.blogspot.com/2016/11/authorization-with-oauth2.html" target="_blank" rel="noopener">Referência: Shotgun Debugging</a></figcaption>
                         </figure>
@@ -233,22 +248,49 @@
                     </section>
                     <section data-auto-animate>
                         <h3>Como deixar os <em>tokens</em> seguros?</h3>
+                        <ul>
                             <li>Apenas trafegue <em>tokens</em> no cabeçalho ou corpo da requisição, nunca na URL</li>
                             <li class="fragment">Não exiba informações do <em>token</em> em seus <em>logs</em></li>
                         </ul>
                     </section>
                     <section>
-                        <h6>Referências</h6>
+                        <h3>Exemplo de implementação</h3>
+                        <pre><code class="php">use Lcobucci\JWT\Builder;
+
+$time = time();
+$token = (new Builder())
+    ->issuedBy('http://example.com') // Configures the issuer (iss claim)
+    ->permittedFor('http://example.org') // Configures the audience (aud claim)
+    ->identifiedBy('4f1g23a12aa', true) // Configures the id (jti claim), replicating as a header item
+    ->issuedAt($time) // Configures the time that the token was issue (iat claim)
+    ->canOnlyBeUsedAfter($time + 60) // Configures the time that the token can be used (nbf claim)
+    ->expiresAt($time + 3600) // Configures the expiration time of the token (exp claim)
+    ->withClaim('uid', 1) // Configures a new claim, called "uid"
+    ->getToken(); // Retrieves the generated token</code></pre>
+                        <a href="https://github.com/lcobucci/jwt/blob/3.3/README.md" class="small" target="_blank" rel="noopener">lcobucci/jwt</a>
+                    </section>
+                    <section>
+                        <h6>Bibliotecas</h6>
                         <ul>
-                            <li><a href="https://jwt.io/" target="_blank" rel="noopener">JSON Web Token</a>, implementação mais conhecida</li>
-                            <li><a href="https://paseto.io/" target="_blank" rel="noopener">PASETO</a>, implementação com design mais seguro</li>
                             <li>
-                                No PHP:
+                                JSON Web Tokens: implementação mais conhecida de tokens
                                 <ul>
-                                    <li><a href="https://viniciuscampitelli.com/slides/criptografia-php/" target="_blank" rel="noopener">Meu slides sobre Criptografia</a></li>
-                                    <li><a href="https://viniciuscampitelli.com/slides/libsodium-php/" target="_blank" rel="noopener">Meu slides sobre a libsodium</a>, biblioteca moderna de criptografia</li>
+                                    <li><a href="https://github.com/lcobucci/jwt" target="_blank" rel="noopener">lcobucci/jwt</a></li>
+                                    <li><a href="https://github.com/firebase/php-jwt" target="_blank" rel="noopener">firebase/php-jwt</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                PASETO: implementação com design "mais seguro" por padrão
+                                <ul>
+                                    <li><a href="https://github.com/paragonie/paseto" target="_blank" rel="noopener">paragonie/paseto</a></li>
+                                </ul>
+                            </li>
+                    </section>
+                    <section>
+                        <h6>Referências</h6>
+                        <ul>
+                            <li><a href="https://viniciuscampitelli.com/slides/libsodium-php/" target="_blank" rel="noopener">Meu slides sobre a libsodium</a>, biblioteca moderna de criptografia</li>
+                            <li><a href="https://symfony.com/doc/current/security/guard_authentication.html" target="_blank" rel="noopener">Symfony Guard</a></li>
                         </ul>
                     </section>
                 </section>
@@ -385,26 +427,79 @@
                             <p class="fragment">Cuidado com espionagem industrial! <img src="https://img.icons8.com/color/48/000000/spy-male--v1.png"></p>
                         </div>
                     </section>
-                    <section>
-                        <h2>Como resolver?</h2>
-                        <ul>
+                    <section data-auto-animate>
+                        <h2 data-id="title"><span class="label fragment">Versão Standard</span><br>Como resolver?</h2>
+                        <ul class="fragment">
                             <li>
                                 Crie um segundo campo na tabela com um valor único para aquele registro
                                 <ul class="fragment">
                                     <li>Esse valor pode ser um <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener">GUID</a>, um hash do ID incremental ou um valor aleatório...</li>
                                 </ul>
                             </li>
-                            <li class="fragment">Então, transforme o recurso <code>/user/IdIncremental</code> em <code>/user/Identificador</code></li>
+                            <li class="fragment">Então, transforme o recurso <code>/user/&lt;IdIncremental&gt;</code> em <code>/user/&lt;Identificador&gt;</code></li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h2 data-id="title"><span class="label">Versão Standard</span><br>Como resolver?</h2>
+                        <h6>Referências</h6>
+                        <ul>
+                            <li>
+                                Funções para gerar valores aleatórios:
+                                <ul>
+                                    <li>
+                                        <a href="https://www.php.net/manual/en/function.random-bytes.php" target="_blank" rel="noopener">random_bytes()</a> para PHP 7
+                                        <ul>
+                                            <li>Para PHP 5, use o polyfill <a href="https://github.com/paragonie/random_compat" target="_blank" rel="noopener">paragonie/random_compat</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Funções para gerar hash:
+                                <ul>
+                                    <li><a href="https://www.php.net/manual/en/function.hash-hmac.php" target="_blank" rel="noopener">hash_hmac()</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://paragonie.com/blog/2017/05/building-searchable-encrypted-databases-with-php-and-sql#solution-literal-search" target="_blank" rel="noopener">Artigo no blog da Paragon</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h2 data-id="title"><span class="label">Versão Standard</span><br>Como <b>não</b> resolver?</h2>
+                        <p>Funções que <b>não devem</b> ser utilizadas:</p>
+                        <ul>
+                            <li>
+                                Para gerar valores aleatórios:
+                                <ul>
+                                    <li><span class="strike">rand()</span></li>
+                                    <li><span class="strike">mt_rand()</span></li>
+                                    <li><span class="strike">uniqid()</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Para gerar hash:
+                                <ul>
+                                    <li><span class="strike">sha1()</span></li>
+                                    <li><span class="strike">md5()</span></li>
+                                </ul>
+                            </li>
                         </ul>
                     </section>
                     <section>
-                        <h6>Referências</h6>
-                        <ul>
-                            <li><a href="https://www.php.net/manual/en/function.com-create-guid.php" target="_blank" rel="noopener">GUID Em PHP</a></li>
-                            <li><a href="https://github.com/uuidjs/uuid" target="_blank" rel="noopener">UUID Em NodeJS</a></li>
-                            <li><a href="https://docs.python.org/3/library/uuid.html" target="_blank" rel="noopener">UUID Em Python</a></li>
-                            <li><a href="https://kodejava.org/how-do-i-generate-uuid-guid-in-java/" target="_blank" rel="noopener">UUID Em Java</a></li>
-                        </ul>
+                        <h2><span class="label flames fragment">Versão Hardcore</span><br>Como resolver?</h2>
+                        <div class="fragment">
+                            <p>
+                                Utilizando a biblioteca <a href="https://github.com/paragonie/ciphersweet" target="_blank" rel="noopener">paragonie/ciphersweet</a>, que deriva uma chave para cada coluna a partir de uma chave-mestra
+                            </p>
+                            <br>
+                            <h6>Referência</h6>
+                            <ul>
+                                <li>
+                                    <a href="https://paragonie.com/blog/2019/01/ciphersweet-searchable-encryption-doesn-t-have-be-bitter" target="_blank" rel="noopener">Artigo no blog da Paragon</a>
+                                </li>
+                            </ul>
+                        </div>
                     </section>
                 </section>
 
@@ -583,6 +678,14 @@
                 history: true,
                 overview: false,
                 plugins: [RevealHighlight]
+            });
+
+
+            // @see https://stackoverflow.com/a/26893663
+            const element = document.querySelector('.slides'),
+                scaleX = element.getBoundingClientRect().width / element.offsetWidth;
+            document.querySelectorAll('img[data-width]').forEach(node => {
+                node.style.width = (node.dataset.width / scaleX) + 'px';
             });
         </script>
     </body>

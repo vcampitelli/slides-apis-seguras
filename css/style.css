@@ -1,6 +1,35 @@
 .reveal-viewport {
   background: #f0f0f0;
 }
+.reveal {
+  color: #595959;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #494949;
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+}
+.reveal h1 {
+  font-size: 2em;
+}
+.reveal h2 {
+  font-size: 1.5em;
+}
+.reveal h3 {
+  font-size: 1.25em;
+}
+.reveal h4 {
+  font-size: 1em;
+}
+
 .reveal blockquote {
   border-left: 5px #ddd solid;
   text-align: left;
@@ -35,9 +64,24 @@ code {
   background-color: #ddd;
   color: #e83e8c;
   font-size: 0.9em;
+  padding: 0 3px;
 }
 li > ul {
   font-size: 0.8em !important;
+}
+.label {
+  padding: 0 5px;
+  font-size: 0.5em;
+  background: #494949;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+.label.flames {
+  background: #000 url(http://bestanimations.com/Nature/Fire/Flames/Flame-14-june.gif) bottom center repeat-x;
+}
+.strike {
+  text-decoration: line-through;
 }
 
 .d-flex {
