@@ -98,3 +98,8 @@ li > ul {
 .mr-2 {
   margin-right: 2rem !important;
 }
+#img-profile {
+  width: 250px;
+  border-radius: 50%;
+  background: #fff;
+}
