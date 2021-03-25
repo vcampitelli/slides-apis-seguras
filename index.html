@@ -31,6 +31,7 @@
                         </div>
                         <div>
                             <ul>
+                                <li>Desenvolvedor na <a href="https://www.ottera.tv/" target="_blank" rel="noopener">OTTera</a></li>
                                 <li>Membro do <a href="https://phpsp.org.br" target="_blank" rel="noopener">PHPSP</a></li>
                                 <li>GitHub e Twitter: <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">@vcampitelli</a></li>
                                 <li>Slides: <a href="https://viniciuscampitelli.com/slides-apis-seguras/" target="_blank" rel="noopener">viniciuscampitelli.com</a></li>
@@ -172,6 +173,16 @@
                                     <li><a href="https://viniciuscampitelli.com/slides/expressive-oauth2-jwt/" target="_blank" rel="noopener">Meu slides sobre OAuth2</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                Para Node.JS
+                                <ul>
+                                    <li><a href="https://github.com/oauthjs/node-oauth2-server" target="_blank" rel="noopener">oauthjs/node-oauth2-server</a></li>
+                                    <li><a href="https://github.com/t1msh/node-oauth20-provider" target="_blank" rel="noopener">t1msh/node-oauth20-provider</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://oauth.net/code/" target="_blank" rel="noopener">Mais bibliotecas no oauth.net</a>
+                            </li>
                         </ul>
                     </section>
                 </section>
@@ -269,27 +280,38 @@ $token = (new Builder())
                         <a href="https://github.com/lcobucci/jwt/blob/3.3/README.md" class="small" target="_blank" rel="noopener">lcobucci/jwt</a>
                     </section>
                     <section>
-                        <h6>Bibliotecas</h6>
+                        <h5>Bibliotecas</h5>
+                        <h6>JWT</h6>
+                        <p>Implementação mais conhecida de tokens</p>
                         <ul>
-                            <li>
-                                JSON Web Tokens: implementação mais conhecida de tokens
-                                <ul>
-                                    <li><a href="https://github.com/lcobucci/jwt" target="_blank" rel="noopener">lcobucci/jwt</a></li>
-                                    <li><a href="https://github.com/firebase/php-jwt" target="_blank" rel="noopener">firebase/php-jwt</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                PASETO: implementação com design "mais seguro" por padrão
-                                <ul>
-                                    <li><a href="https://github.com/paragonie/paseto" target="_blank" rel="noopener">paragonie/paseto</a></li>
-                                </ul>
-                            </li>
+                            <li>PHP: <a href="https://github.com/lcobucci/jwt" target="_blank" rel="noopener">lcobucci/jwt</a></li>
+                            <li>Node.JS: <a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener">auth0/node-jsonwebtoken</a></li>
+                            <li>Python: <a href="https://github.com/jpadilla/pyjwt/" target="_blank" rel="noopener">jpadilla/pyjwt</a></li>
+                            <li>Site oficial: <a href="https://jwt.io/" target="_blank" rel="noopener"></a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h5>Bibliotecas</h5>
+                        <h6>PASETO</h6>
+                        <p>Implementação com design "mais seguro" por padrão</p>
+                        <ul>
+                            <li>PHP: <a href="https://github.com/paragonie/paseto" target="_blank" rel="noopener">paragonie/paseto</a></li>
+                            <li>Node.JS: <a href="https://github.com/panva/paseto" target="_blank" rel="noopener">panva/paseto</a></li>
+                            <li>Python: <a href="https://github.com/rlittlefield/pypaseto" target="_blank" rel="noopener">rlittlefield/pypaset</a></li>
+                            <li>Site oficial: <a href="https://paseto.io/" target="_blank" rel="noopener">paseto.io</a></li>
+                        </ul>
+                    </li>
                     </section>
                     <section>
                         <h6>Referências</h6>
                         <ul>
                             <li><a href="https://viniciuscampitelli.com/slides/libsodium-php/" target="_blank" rel="noopener">Meu slides sobre a libsodium</a>, biblioteca moderna de criptografia</li>
-                            <li><a href="https://symfony.com/doc/current/security/guard_authentication.html" target="_blank" rel="noopener">Symfony Guard</a></li>
+                            <li><a href="https://symfony.com/doc/current/security/guard_authentication.html" target="_blank" rel="noopener">Symfony Guard</a>, componente do framework PHP Symfony</li>
+                            <li>
+                                Artigo: <a href="https://paragonie.com/blog/2017/03/jwt-json-web-tokens-is-bad-standard-that-everyone-should-avoid" target="_blank" rel="noopener">
+                                    No Way, JOSE! Javascript Object Signing and Encryption is a Bad Standard That Everyone Should Avoid
+                                </a>
+                            </li>
                         </ul>
                     </section>
                 </section>
@@ -439,8 +461,10 @@ $token = (new Builder())
                         </ul>
                     </section>
                     <section data-auto-animate>
-                        <h2 data-id="title"><span class="label">Versão Standard</span><br>Como resolver?</h2>
-                        <h6>Referências</h6>
+                        <h2 data-id="title">
+                            <span class="label">Versão Standard</span><br>Como <b data-id="block-no" style="display: none">não</b> resolver?
+                        </h2>
+                        <h6>PHP</h6>
                         <ul>
                             <li>
                                 Funções para gerar valores aleatórios:
@@ -465,7 +489,10 @@ $token = (new Builder())
                         </ul>
                     </section>
                     <section data-auto-animate>
-                        <h2 data-id="title"><span class="label">Versão Standard</span><br>Como <b>não</b> resolver?</h2>
+                        <h2 data-id="title">
+                            <span class="label">Versão Standard</span><br>Como <b data-id="block-no">não</b> resolver?
+                        </h2>
+                        <h6>PHP</h6>
                         <p>Funções que <b>não devem</b> ser utilizadas:</p>
                         <ul>
                             <li>
@@ -484,6 +511,36 @@ $token = (new Builder())
                                 </ul>
                             </li>
                         </ul>
+                    </section>
+                    <section>
+                        <h2 data-id="title"><span class="label">Versão Standard</span><br>Como resolver?</h2>
+                        <h6>Node.JS</h6>
+                        <ul>
+                            <li>
+                                Módulo <a href="https://nodejs.org/api/crypto.html" target="_blank" rel="noopener">Crypto</a>
+                            </li>
+                        </ul>
+                        <pre><code class="javascript" data-trim>
+const { createHash } = require('crypto');
+
+const hash = createHash('sha256');
+
+user.lookupHash = hash.update(user.id).digest('hex');
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2 data-id="title"><span class="label">Versão Standard</span><br>Como resolver?</h2>
+                        <h6>Python</h6>
+                        <ul>
+                            <li>
+                                Módulo <a href="https://docs.python.org/3/library/crypt.html" target="_blank" rel="noopener">crypt</a> <em>(built-in na versão 3)</em>
+                            </li>
+                        </ul>
+                        <pre><code class="python" data-trim>
+                            from hashlib import sha256
+
+                            sha256(user.id).hexdigest()
+                        </code></pre>
                     </section>
                     <section>
                         <h2><span class="label flames fragment">Versão Hardcore</span><br>Como resolver?</h2>
